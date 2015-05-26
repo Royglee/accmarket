@@ -12,7 +12,7 @@ class AccountsTableSeeder extends Seeder {
         foreach(range(1, 100) as $index)
         {
             Account::create([
-                'title' => $faker->title,
+                'title' => $faker->sentence(5),
                 'price'=> $faker->randomFloat(2,5,250),
                 'server'=>$faker->randomElement(['NA', 'EUNE', 'EUW', 'OCE', 'BR', 'LA', 'RU', 'TR', 'KR']),
                 'league'=>$faker->randomElement(['Unranked','Bronze','Silver','Gold','Platinum','Diamond','Master','Challanger']),

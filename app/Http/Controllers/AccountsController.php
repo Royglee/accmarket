@@ -7,20 +7,18 @@ use Illuminate\Http\Request;
 
 
 class AccountsController extends Controller {
-    protected $account;
-    function __construct(Account $account)
-    {
-        $this->account=$account;
-    }
 
     /**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
+     * Display a listing of the resource.
+     *
+     * @param Account $var
+     * @return Response
+     * @internal param Account $accounts
+     */
+	public function index(Account $var)
 	{
-        return $this->account->all();
+        $accounts= $var->all();
+        return view('accounts.index', compact('accounts'));
 	}
 
 	/**
@@ -43,15 +41,18 @@ class AccountsController extends Controller {
 		//
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
+    /**
+     * Display the specified resource.
+     *
+     * @param Account $account
+     * @return Response
+     * @internal param $id
+     * @internal param $account
+     * @internal param int $id
+     */
+	public function show(Account $account)
 	{
-		//
+		return $account;
 	}
 
 	/**

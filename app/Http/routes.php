@@ -14,14 +14,12 @@
 use App\Account;
 use App\User;
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'AccountsController@index');
 
 Route::get('home', 'HomeController@index');
-
-get('users', function(){
-    return User::all();
-});
 get('accounts', 'AccountsController@index');
+
+get('accounts/{account}', 'AccountsController@show');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
