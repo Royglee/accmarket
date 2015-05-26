@@ -1,20 +1,41 @@
 <?php
 
+use App\Account;
+use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder {
 
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
+    protected $tables = [
+        'users',
+        'accounts'
+    ];
+
+    /**
+     * Run the database seeds.
+     *
+     */
 	public function run()
 	{
 		Model::unguard();
+        $this->cleanDatabase();
 
-		// $this->call('UserTableSeeder');
+        $this->call('UsersTableSeeder');
+        $this->call('AccountsTableSeeder');
 	}
 
+    private function cleanDatabase()
+    {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        foreach ($this->tables as $table)
+        {
+            DB::table($table)->truncate();
+        }
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+    }
 }
+
+
+

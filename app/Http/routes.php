@@ -11,21 +11,17 @@
 |
 */
 
+use App\Account;
 use App\User;
-use Laracasts\TestDummy\Factory;
 
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-get('generate', function(){
-    Factory::$factoriesPath = base_path() . '/tests/factories';
-    Factory::times(10)->create('App\User');
-});
-
 get('users', function(){
     return User::all();
 });
+get('accounts', 'AccountsController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
