@@ -13,9 +13,9 @@ class AccountsTableSeeder extends Seeder {
         {
             Account::create([
                 'title' => $faker->sentence(5),
-                'price'=> $faker->randomFloat(2,5,250),
+                'price'=> $faker->randomFloat(1,4,250),
                 'server'=>$faker->randomElement(['NA', 'EUNE', 'EUW', 'OCE', 'BR', 'LA', 'RU', 'TR', 'KR']),
-                'league'=>$faker->randomElement(['Unranked','Bronze','Silver','Gold','Platinum','Diamond','Master','Challanger']),
+                'league'=>$faker->randomElement(['Unranked','Bronze','Silver','Gold','Platinum','Diamond','Master','Challenger']),
                 'division'=>$faker->numberBetween(1,5),
                 'champions'=>$faker->numberBetween(20,160),
                 'skins'=>$faker->numberBetween(0,200),

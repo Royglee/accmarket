@@ -21,7 +21,7 @@ class CreateAccountsTable extends Migration {
             $table->float('price');
             $table->string('server');
             $table->string('league');
-            $table->integer('division')->unsigned();
+            $table->integer('division')->unsigned()->nullable();
             $table->integer('champions');
             $table->integer('skins');
             $table->integer('user_id')->unsigned();

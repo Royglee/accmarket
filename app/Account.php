@@ -9,4 +9,16 @@ class Account extends Model {
     {
         return $this->belongsTo('App\User');
     }
+    public function setDivisionAttribute($value)
+    {
+        $league = $this->attributes['league'];
+
+        if($league !== 'Unranked' && $league !== 'Master' && $league !== 'Challenger' ){
+            $this->attributes['division'] = $value;
+        }
+        else{
+            $this->attributes['division']= null;
+        }
+    }
+
 }
