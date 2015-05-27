@@ -1,4 +1,5 @@
 @import "bootstrap/bootstrap";
+@import "material-shadows";
 
 @btn-font-weight: 300;
 @font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
@@ -28,7 +29,11 @@ body, label, .checkbox label {
         li{
           padding: 5px;
           margin-bottom: 5px;
-          border: 1px solid lightslategrey;
+          .z-depth(1);
+          .z-depth-bottom(1);
+          background-color: rgb(80, 149, 213);
+          color: #ffffff;
+          font-weight: bold;
         }
       }
       .title{
@@ -36,6 +41,7 @@ body, label, .checkbox label {
         height: 55px;
         overflow: hidden;
         background-color: #d2d2d2;
+        border-top:1px solid lightslategrey;
       }
     }
   }

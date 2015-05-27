@@ -6677,13 +6677,17 @@ label,
 .account_row .account_list_item_wrapper .account_list_item .specs li {
   padding: 5px;
   margin-bottom: 5px;
-  border: 1px solid lightslategrey;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.16);
+  background-color: #5095d5;
+  color: #ffffff;
+  font-weight: bold;
 }
 .account_row .account_list_item_wrapper .account_list_item .title {
   padding: 5px 10px;
   height: 55px;
   overflow: hidden;
   background-color: #d2d2d2;
+  border-top: 1px solid lightslategrey;
 }
 
 /*# sourceMappingURL=style.css.map */
