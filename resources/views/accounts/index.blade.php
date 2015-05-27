@@ -8,7 +8,7 @@
 
                         <div class="col-md-4 account_list_item_wrapper">
                             <div class="account_list_item">
-                                <ul class="specs">
+                                <ul class="specs kamuklass">
                                     <li>Server: {{$account->server}}</li>
                                     <li>Division: {{$account->league}} {{$account->division}}</li>
                                     <li>Champions: {{$account->champions}}</li>
