@@ -3,21 +3,27 @@
 use App\Account;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Routing\Middleware;
 use Illuminate\Http\Request;
 
 
 class AccountsController extends Controller {
+    function __construct()
+    {
+        $this->middleware('auth',['only' => 'create']);
+    }
 
     /**
      * Display a listing of the resource.
      *
-     * @param Account $var
+     * @param Account $accounts
      * @return Response
+     * @internal param Account $var
      * @internal param Account $accounts
      */
-	public function index(Account $var)
+	public function index(Account $accounts)
 	{
-        $accounts= $var->all();
+        $accounts= $accounts->with('User')->get();
         return view('accounts.index', compact('accounts'));
 	}
 
@@ -28,7 +34,7 @@ class AccountsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('accounts.create');
 	}
 
 	/**
@@ -52,7 +58,6 @@ class AccountsController extends Controller {
      */
 	public function show(Account $account)
 	{
-
         return view('accounts.show', compact('account'));
 	}
 

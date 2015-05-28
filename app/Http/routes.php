@@ -18,8 +18,9 @@ Route::get('/', 'AccountsController@index');
 
 Route::get('home', 'HomeController@index');
 get('accounts', 'AccountsController@index');
-
+get('accounts/create','AccountsController@create');
 get('accounts/{account}', 'AccountsController@show');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
