@@ -5,9 +5,9 @@
             @foreach($accounts->chunk(3)->all() as $row)
                 <div class="row  account_row">
                     @foreach($row as $account)
-
                         <div class="col-md-4 account_list_item_wrapper">
-                            <div class="account_list_item {{$account->league}}" >
+                            <a href="{{asset('accounts/'.$account->id)}}" class="account_list_item {{$account->league}}" >
+
                                 <div class="account_list_item_top" @include('accounts/partials/_background_badge',['account',$account])>
                                     <div class="price">
                                         ${{$account->price}}
@@ -20,12 +20,14 @@
                                     </ul>
                                 </div>
                                 <div class="title">
-                                {!!link_to('accounts/'.$account->id , $account->title)!!}
+                                    {{--<a href="{{asset('accounts/'.$account->id)}}">{{$account->title}}</a>--}}
+                                    {{$account->title}}
                                 </div>
                                 <div class="seller_info">
                                     <b>- {{$account->user->name}}</b>
                                 </div>
-                            </div>
+
+                            </a>
                         </div>
                     @endforeach
                 </div>

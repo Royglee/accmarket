@@ -11,6 +11,14 @@
       border: 1px rgb(184, 185, 185) solid;
       margin-bottom: 20px;
       .z-depth(1);
+      transition: all 0.1s ease-in;
+      display: block;
+      text-decoration: none;
+      color: #333333;
+
+      &:hover{
+        .z-depth(2);
+      }
       .account_list_item_top{
         background: no-repeat right -14px center;
         background-size: 59% ;
@@ -32,7 +40,6 @@
           padding: 5px 10px;
           margin-bottom: 5px;
           .z-depth(1);
-          .z-depth-bottom(1);
           background-color: rgb(80, 149, 213);
           color: #ffffff;
           font-weight: bold;

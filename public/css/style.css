@@ -6235,6 +6235,13 @@ button.close {
   border: 1px #b8b9b9 solid;
   margin-bottom: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+  transition: all 0.1s ease-in;
+  display: block;
+  text-decoration: none;
+  color: #333333;
+}
+.account_row .account_list_item_wrapper .account_list_item:hover {
+  box-shadow: 0 8px 17px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 .account_row .account_list_item_wrapper .account_list_item .account_list_item_top {
   background: no-repeat right -14px center;
@@ -6258,7 +6265,7 @@ button.close {
 .account_row .account_list_item_wrapper .account_list_item .specs li {
   padding: 5px 10px;
   margin-bottom: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
   background-color: #5095d5;
   color: #ffffff;
   font-weight: bold;
