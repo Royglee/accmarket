@@ -16,7 +16,6 @@ gulp.task('autoprefix', function () {
         .pipe(autoprefixer())
         .pipe(gulp.dest('public/css'));
 });
-
 elixir(function(mix) {
     mix.less('style.less');
     mix.task('autoprefix')

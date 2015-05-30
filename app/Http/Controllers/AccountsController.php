@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Routing\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 
 class AccountsController extends Controller {
@@ -23,7 +24,13 @@ class AccountsController extends Controller {
      */
 	public function index(Account $accounts)
 	{
-        $accounts= $accounts->with('User')->get();
+       /* $accounts = Cache::remember('account', 5, function() use ($accounts)
+        {
+            return $accounts->with('user')->get();
+        });*/
+        //Cache::forget('account');
+        $accounts= $accounts->withUser(['name'])->get();
+
         return view('accounts.index', compact('accounts'));
 	}
 
